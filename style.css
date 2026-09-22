@@ -1,0 +1,1450 @@
+/* =====================================================
+   CHRISTIAN GÓIS
+   Psicanálise Clínica & Reprocessamento Generativo
+   ===================================================== */
+
+:root {
+    /* VERDES CLAROS */
+    --verde: #AEBCA5;
+    --verde-escuro: #65745F;
+    --verde-profundo: #4B5947;
+    --verde-claro: #DDE5D8;
+
+    /* FUNDOS CLAROS */
+    --creme: #F8F6EF;
+    --creme-claro: #FDFCF8;
+    --bege: #EEEAE0;
+
+    /* DETALHES */
+    --dourado: #B49A68;
+    --dourado-claro: #C8B486;
+
+    /* TEXTOS */
+    --texto: #384235;
+    --texto-suave: #657061;
+    --branco: #FFFDF9;
+
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Montserrat", Arial, sans-serif;
+}/* =====================================================
+   PROCESSO TERAPÊUTICO - VERSÃO CLARA
+   ===================================================== */
+
+.statement {
+    background: #E7ECE3;
+    color: #3F4B3C;
+    position: relative;
+}
+
+/* PROCESSO TERAPÊUTICO */
+.statement span {
+    color: #A17F45;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+}
+
+/* FRASE PRINCIPAL */
+.statement blockquote {
+    color: #3F4B3C;
+    font-weight: 500;
+}
+
+/* Detalhe decorativo */
+.statement-container::after {
+    content: "";
+    display: block;
+
+    width: 80px;
+    height: 1px;
+
+    background: #B49A68;
+
+    margin: 45px auto 0;
+}
+
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--creme);
+    color: var(--texto);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1180px, 88%);
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   CABEÇALHO
+   ===================================================== */
+
+.header {
+    width: 100%;
+    height: 88px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(245, 241, 232, 0.96);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(79, 89, 72, 0.14);
+}
+
+.header-container {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1;
+}
+
+.logo-name {
+    font-family: var(--serif);
+    font-size: 25px;
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+}
+
+.logo-description {
+    margin-top: 7px;
+
+    font-size: 8px;
+    font-weight: 500;
+
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+
+    color: var(--verde);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav a {
+    position: relative;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+
+    color: var(--texto);
+}
+
+.nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--dourado);
+
+    transition: 0.3s;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.btn-header {
+    padding: 13px 20px;
+
+    border: 1px solid var(--verde);
+
+    color: var(--verde-escuro);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    transition: 0.3s;
+}
+
+.btn-header:hover {
+    background: var(--verde);
+    color: var(--branco);
+}
+
+.menu-toggle {
+    display: none;
+
+    background: transparent;
+    border: none;
+
+    color: var(--verde-escuro);
+
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero {
+    min-height: calc(100vh - 88px);
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 0 90px;
+
+    overflow: hidden;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+.section-label {
+    display: inline-block;
+
+    color: var(--verde);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 700px;
+
+    margin: 27px 0 30px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(55px, 6vw, 88px);
+    font-weight: 500;
+
+    line-height: 0.92;
+
+    letter-spacing: -0.025em;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: var(--verde);
+
+    font-style: italic;
+}
+
+.hero-text {
+    max-width: 590px;
+
+    color: var(--texto-suave);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    margin-top: 38px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.btn-primary {
+    padding: 16px 25px;
+
+    background: var(--verde);
+    color: var(--branco);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--verde-escuro);
+}
+
+.btn-text {
+    color: var(--verde-escuro);
+
+    font-size: 11px;
+    font-weight: 500;
+
+    border-bottom: 1px solid var(--dourado);
+
+    padding-bottom: 5px;
+}
+
+
+/* HERO VISUAL */
+
+.hero-visual {
+    min-height: 550px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 55px;
+
+    background: var(--verde);
+
+    overflow: hidden;
+}
+
+.hero-visual::before {
+    content: "";
+
+    position: absolute;
+
+    width: 430px;
+    height: 430px;
+
+    top: -170px;
+    right: -170px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+}
+
+.hero-visual::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    bottom: -130px;
+    left: -120px;
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 50%;
+}
+
+.photo-placeholder {
+    position: relative;
+    z-index: 2;
+
+    height: 350px;
+
+    border: 1px solid rgba(255, 255, 255, 0.32);
+
+    border-radius: 180px 180px 0 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--creme);
+}
+
+.initials {
+    font-family: var(--serif);
+
+    font-size: 100px;
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+.photo-placeholder p {
+    margin-top: 20px;
+
+    font-family: var(--serif);
+
+    font-size: 21px;
+
+    letter-spacing: 0.04em;
+}
+
+.hero-detail {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 30px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+
+    color: var(--creme);
+}
+
+.hero-detail p {
+    font-family: var(--serif);
+    font-size: 21px;
+}
+
+.hero-detail span {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+
+    opacity: 0.7;
+}
+
+
+/* =====================================================
+   SOBRE
+   ===================================================== */
+
+.about {
+    padding: 120px 0;
+
+    background: var(--verde);
+    color: var(--creme);
+}
+
+.about-container {
+    display: grid;
+
+    grid-template-columns: 0.7fr 1.3fr;
+
+    gap: 100px;
+}
+
+.section-label.light {
+    color: var(--dourado-claro);
+}
+
+.about-title h2 {
+    margin-top: 22px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(55px, 6vw, 82px);
+    font-weight: 500;
+
+    line-height: 0.85;
+}
+
+.gold-line {
+    display: block;
+
+    width: 60px;
+    height: 1px;
+
+    margin-bottom: 32px;
+
+    background: var(--dourado);
+}
+
+.about-content h3 {
+    max-width: 650px;
+
+    font-family: var(--serif);
+
+    font-size: 38px;
+    font-weight: 500;
+
+    line-height: 1.15;
+}
+
+.about-content p {
+    max-width: 720px;
+
+    margin-top: 25px;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    color: rgba(255, 253, 248, 0.76);
+}
+
+.professional-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 40px;
+}
+
+.professional-tags span {
+    padding: 10px 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.23);
+
+    font-size: 9px;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   ÁREAS DE ATUAÇÃO
+   ===================================================== */
+
+.areas {
+    padding: 120px 0;
+
+    background: var(--creme-claro);
+}
+
+.section-heading {
+    max-width: 850px;
+}
+
+.section-heading h2 {
+    margin: 22px 0;
+
+    font-family: var(--serif);
+
+    font-size: clamp(45px, 5vw, 66px);
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+.section-heading h2 span {
+    display: block;
+
+    color: var(--verde);
+
+    font-style: italic;
+}
+
+.section-heading > p {
+    max-width: 600px;
+
+    color: var(--texto-suave);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+.areas-grid {
+    margin-top: 70px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid var(--bege);
+    border-left: 1px solid var(--bege);
+}
+
+.area-card {
+    min-height: 260px;
+
+    padding: 38px;
+
+    border-right: 1px solid var(--bege);
+    border-bottom: 1px solid var(--bege);
+
+    transition: 0.35s;
+}
+
+.area-card:hover {
+    background: var(--verde);
+
+    color: var(--creme);
+
+    transform: translateY(-4px);
+}
+
+.number {
+    color: var(--dourado);
+
+    font-size: 10px;
+
+    letter-spacing: 0.12em;
+}
+
+.area-card h3 {
+    margin: 30px 0 18px;
+
+    font-family: var(--serif);
+
+    font-size: 29px;
+    font-weight: 600;
+}
+
+.area-card p {
+    color: var(--texto-suave);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+.area-card:hover p {
+    color: rgba(255, 255, 255, 0.74);
+}
+
+
+/* =====================================================
+   ABORDAGENS
+   ===================================================== */
+
+.approaches {
+    padding: 120px 0;
+
+    background: var(--bege);
+}
+
+.approaches-container {
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 100px;
+}
+
+.approaches-heading h2 {
+    margin: 22px 0;
+
+    font-family: var(--serif);
+
+    font-size: 52px;
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+.approaches-heading p {
+    max-width: 470px;
+
+    color: var(--texto-suave);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+.approaches-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.approach-card {
+    padding: 38px 40px;
+
+    background: var(--creme-claro);
+
+    border-left: 3px solid var(--dourado);
+}
+
+.approach-card > span {
+    color: var(--dourado);
+
+    font-size: 10px;
+
+    letter-spacing: 0.12em;
+}
+
+.approach-card h3 {
+    margin: 15px 0;
+
+    font-family: var(--serif);
+
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.approach-card p {
+    color: var(--texto-suave);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   FRASE
+   ===================================================== */
+
+.statement {
+    padding: 130px 0;
+
+    background: var(--verde-profundo);
+
+    color: var(--creme);
+}
+
+.statement-container {
+    max-width: 900px;
+
+    text-align: center;
+}
+
+.statement span {
+    color: var(--dourado-claro);
+
+    font-size: 9px;
+
+    letter-spacing: 0.25em;
+}
+
+.statement blockquote {
+    margin-top: 30px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 400;
+
+    line-height: 1.1;
+}
+
+
+/* =====================================================
+   CONTATO
+   ===================================================== */
+
+.contact {
+    padding: 120px 0;
+
+    background: var(--creme);
+}
+
+.contact-container {
+    max-width: 850px;
+
+    text-align: center;
+}
+
+.contact h2 {
+    margin: 20px 0;
+
+    font-family: var(--serif);
+
+    font-size: clamp(50px, 6vw, 72px);
+    font-weight: 500;
+
+    line-height: 0.95;
+}
+
+.contact h2 span {
+    display: block;
+
+    color: var(--verde);
+
+    font-style: italic;
+}
+
+.contact-container > p {
+    max-width: 600px;
+
+    margin: 0 auto 55px;
+
+    color: var(--texto-suave);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+.contact-links {
+    border-top: 1px solid var(--bege);
+
+    text-align: left;
+}
+
+.contact-item {
+    padding: 24px 8px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--bege);
+
+    transition: 0.3s;
+}
+
+.contact-item div {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.contact-item small {
+    color: var(--dourado);
+
+    font-size: 8px;
+
+    letter-spacing: 0.16em;
+}
+
+.contact-item strong {
+    margin-top: 5px;
+
+    font-family: var(--serif);
+
+    font-size: 27px;
+    font-weight: 500;
+}
+
+.contact-item > span {
+    font-size: 23px;
+
+    color: var(--verde);
+}
+
+.contact-item:hover {
+    padding-left: 20px;
+
+    background: rgba(111, 121, 100, 0.06);
+}
+
+
+/* =====================================================
+   RODAPÉ
+   ===================================================== */
+
+.footer {
+    padding: 55px 0;
+
+    background: var(--verde-profundo);
+
+    color: var(--creme);
+}
+
+.footer-container {
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr 1fr;
+
+    gap: 50px;
+
+    align-items: end;
+}
+
+.footer strong {
+    font-family: var(--serif);
+
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.footer p,
+.footer span,
+.footer a {
+    font-size: 9px;
+
+    line-height: 1.8;
+
+    letter-spacing: 0.06em;
+
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.footer-navigation {
+    display: flex;
+
+    gap: 20px;
+}
+
+.footer-navigation a:hover {
+    color: var(--dourado-claro);
+}
+
+.footer-copy {
+    text-align: right;
+}
+
+
+/* =====================================================
+   WHATSAPP FLUTUANTE
+   ===================================================== */
+
+.whatsapp-floating {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 999;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #25d366;
+    color: white;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+
+    transition: 0.3s;
+}
+
+.whatsapp-floating:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+.whatsapp-floating svg {
+    width: 31px;
+    height: 31px;
+}
+
+
+/* =====================================================
+   RESPONSIVO
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .header {
+        height: 74px;
+    }
+
+    .btn-header {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+
+        top: 74px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 30px;
+
+        background: var(--creme);
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        border-bottom: 1px solid var(--bege);
+
+        display: none;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding: 70px 0;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .hero-visual {
+        min-height: 500px;
+    }
+
+
+    /* SOBRE */
+
+    .about {
+        padding: 85px 0;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+
+    /* ÁREAS */
+
+    .areas {
+        padding: 85px 0;
+    }
+
+    .areas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* ABORDAGENS */
+
+    .approaches {
+        padding: 85px 0;
+    }
+
+    .approaches-container {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .footer-copy {
+        text-align: left;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 88%;
+    }
+
+    .logo-name {
+        font-size: 21px;
+    }
+
+    .hero {
+        padding-top: 55px;
+    }
+
+    .hero h1 {
+        font-size: 47px;
+    }
+
+    .hero-text {
+        font-size: 13px;
+    }
+
+    .hero-buttons {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .hero-visual {
+        padding: 30px;
+
+        min-height: 440px;
+    }
+
+    .photo-placeholder {
+        height: 300px;
+    }
+
+    .initials {
+        font-size: 80px;
+    }
+
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .area-card {
+        min-height: auto;
+    }
+
+    .approaches-heading h2 {
+        font-size: 43px;
+    }
+
+    .statement {
+        padding: 90px 0;
+    }
+
+    .contact {
+        padding: 90px 0;
+    }
+
+    .contact-item strong {
+        font-size: 23px;
+    }
+
+    .footer-navigation {
+        flex-wrap: wrap;
+    }
+
+    .whatsapp-floating {
+        width: 54px;
+        height: 54px;
+
+        right: 18px;
+        bottom: 18px;
+    }
+}/* =====================================================
+   QUEM É CHRISTIAN GÓIS
+   ===================================================== */
+
+.about-container-new {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 100px;
+    align-items: center;
+}
+
+
+/* ESPAÇO PARA FOTO */
+
+.about-photo {
+    position: relative;
+}
+
+.about-photo-placeholder {
+    min-height: 570px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 220px 220px 0 0;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.02)
+        );
+
+    text-align: center;
+    overflow: hidden;
+}
+
+.about-photo-placeholder span {
+    font-family: var(--serif);
+    font-size: 110px;
+    font-weight: 400;
+    color: var(--creme);
+    line-height: 1;
+}
+
+.about-photo-placeholder p {
+    margin-top: 25px;
+
+    color: rgba(255,255,255,0.55);
+
+    font-size: 9px;
+    line-height: 1.7;
+
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+
+/* DESTAQUE DESDE 2018 */
+
+.experience-badge {
+    position: absolute;
+    right: -30px;
+    bottom: 35px;
+
+    width: 190px;
+    padding: 24px;
+
+    background: var(--creme);
+    color: var(--verde-profundo);
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.experience-badge strong {
+    display: block;
+
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.experience-badge span {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 8px;
+    line-height: 1.5;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: var(--texto-suave);
+}
+
+
+/* TEXTO SOBRE CHRISTIAN */
+
+.about-info h2 {
+    margin: 20px 0 25px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(48px, 5vw, 68px);
+    font-weight: 500;
+
+    line-height: 0.95;
+}
+
+.about-info h2 em {
+    display: block;
+
+    color: var(--dourado-claro);
+    font-weight: 400;
+}
+
+.about-divider {
+    width: 65px;
+    height: 1px;
+
+    margin: 30px 0;
+
+    background: var(--dourado);
+}
+
+.about-info p {
+    margin-top: 20px;
+
+    max-width: 650px;
+
+    color: rgba(255,255,255,0.72);
+
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.about-info .about-highlight {
+    color: var(--creme);
+
+    font-family: var(--serif);
+
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+
+/* EXPERIÊNCIA E FORMAÇÃO */
+
+.about-credentials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 45px;
+
+    border-top: 1px solid rgba(255,255,255,0.18);
+}
+
+.about-credentials div {
+    padding: 25px 15px 10px 0;
+}
+
+.about-credentials strong {
+    display: block;
+
+    font-family: var(--serif);
+
+    font-size: 25px;
+    font-weight: 500;
+
+    color: var(--dourado-claro);
+}
+
+.about-credentials span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: rgba(255,255,255,0.55);
+
+    font-size: 8px;
+    line-height: 1.6;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .about-container-new {
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+
+    .about-photo {
+        max-width: 520px;
+        width: 100%;
+
+        margin: 0 auto;
+    }
+
+    .experience-badge {
+        right: -10px;
+    }
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .about-photo-placeholder {
+        min-height: 460px;
+    }
+
+    .about-photo-placeholder span {
+        font-size: 85px;
+    }
+
+    .experience-badge {
+        right: 10px;
+        bottom: 20px;
+
+        width: 165px;
+    }
+
+    .about-info h2 {
+        font-size: 45px;
+    }
+
+    .about-credentials {
+        grid-template-columns: 1fr;
+    }
+
+    .about-credentials div {
+        border-bottom:
+            1px solid rgba(255,255,255,0.12);
+    }
+}/* =====================================================
+   AJUSTE DE LEGIBILIDADE - CHRISTIAN GÓIS
+   ===================================================== */
+
+/* Menu superior */
+.nav a {
+    font-size: 13px;
+}
+
+/* Texto pequeno abaixo do nome */
+.logo-description {
+    font-size: 10px;
+}
+
+/* QUEM É CHRISTIAN GÓIS */
+.about-info .section-label {
+    font-size: 11px;
+}
+
+/* Texto principal de apresentação */
+.about-info .about-highlight {
+    font-size: 25px;
+    line-height: 1.55;
+}
+
+/* Parágrafos da apresentação */
+.about-info p {
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+/* Números / informações inferiores */
+.about-credentials strong {
+    font-size: 29px;
+}
+
+/* Descrições abaixo de 2018, 360h e Atuação */
+.about-credentials span {
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+/* Texto do espaço reservado para foto */
+.about-photo-placeholder p {
+    font-size: 11px;
+}
+
+/* Cartão "Desde 2018" */
+.experience-badge strong {
+    font-size: 30px;
+}
+
+.experience-badge span {
+    font-size: 10px;
+    line-height: 1.5;
+}
