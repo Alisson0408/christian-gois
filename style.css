@@ -65,7 +65,386 @@
 
 /* RESET */
 
-* {
+* {/* =========================================================
+   CHRISTIAN GOIS
+   PALETA OFICIAL
+   Verde oliva + Verde sálvia + Creme + Off-white + Dourado
+   ========================================================= */
+
+:root {
+    --verde-oliva: #737E66;
+    --verde-salvia: #AAB6A0;
+    --creme-novo: #F3EFE5;
+    --off-white-novo: #FBF9F4;
+    --dourado-suave: #C7AA6A;
+
+    --texto-novo: #384136;
+    --texto-suave-novo: #687064;
+    --branco-quente: #FFFDF8;
+}
+
+
+/* =========================================================
+   FUNDO GERAL
+   ========================================================= */
+
+body {
+    background: var(--off-white-novo);
+    color: var(--texto-novo);
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.header {
+    background: var(--off-white-novo);
+}
+
+.header a {
+    color: var(--texto-novo);
+}
+
+.header .logo,
+.header .brand,
+.header strong {
+    color: var(--texto-novo);
+}
+
+.header .btn,
+.header .header-cta {
+    border-color: var(--verde-oliva);
+    color: var(--verde-oliva);
+}
+
+.header .btn:hover,
+.header .header-cta:hover {
+    background: var(--verde-oliva);
+    color: var(--branco-quente);
+}
+
+
+/* =========================================================
+   HERO / INÍCIO
+   ========================================================= */
+
+.hero {
+    background: var(--creme-novo);
+    color: var(--texto-novo);
+}
+
+.hero h1,
+.hero h2 {
+    color: var(--texto-novo);
+}
+
+.hero p {
+    color: var(--texto-suave-novo);
+}
+
+.hero .section-label,
+.hero .eyebrow {
+    color: var(--dourado-suave);
+}
+
+
+/* =========================================================
+   QUEM É CHRISTIAN GOIS
+   VERDE SÁLVIA
+   ========================================================= */
+
+.about {
+    background: var(--verde-salvia);
+    color: var(--texto-novo);
+}
+
+.about h2,
+.about h3,
+.about-info h2,
+.about-info h3 {
+    color: #35402F;
+}
+
+.about h2 em,
+.about-info h2 em {
+    color: #596A50;
+}
+
+.about p,
+.about-info p {
+    color: #414C3C;
+}
+
+.about .section-label,
+.about-info .section-label {
+    color: #80682F;
+    font-weight: 600;
+}
+
+.about .gold-line {
+    background: var(--dourado-suave);
+}
+
+
+/* =========================================================
+   FOTO PROFISSIONAL
+   ========================================================= */
+
+.about-photo-placeholder {
+    background: rgba(251, 249, 244, 0.30);
+    border: 1px solid rgba(56, 65, 54, 0.28);
+}
+
+.about-photo-placeholder span,
+.about-photo-placeholder p {
+    color: #4E5B47;
+}
+
+.experience-badge {
+    background: var(--creme-novo);
+    color: var(--texto-novo);
+    box-shadow: 0 15px 35px rgba(56, 65, 54, 0.12);
+}
+
+.experience-badge strong {
+    color: var(--verde-oliva);
+}
+
+
+/* =========================================================
+   CREDENCIAIS / EXPERIÊNCIA
+   ========================================================= */
+
+.about-credentials {
+    border-top: 1px solid rgba(56, 65, 54, 0.22);
+}
+
+.about-credentials strong {
+    color: #80682F;
+}
+
+.about-credentials span {
+    color: #4E5B47;
+}
+
+
+/* =========================================================
+   ÁREAS DE ATUAÇÃO
+   OFF-WHITE
+   ========================================================= */
+
+.areas {
+    background: var(--off-white-novo);
+    color: var(--texto-novo);
+}
+
+.areas h2,
+.areas h3 {
+    color: var(--texto-novo);
+}
+
+.areas .section-label {
+    color: #8A713A;
+}
+
+.area-card {
+    background: var(--creme-novo);
+    color: var(--texto-novo);
+    border-color: rgba(115, 126, 102, 0.22);
+}
+
+.area-card h3 {
+    color: #43503E;
+}
+
+.area-card p {
+    color: var(--texto-suave-novo);
+}
+
+.area-card:hover {
+    background: var(--verde-salvia);
+    color: var(--texto-novo);
+}
+
+.area-card:hover h3 {
+    color: #35402F;
+}
+
+.area-card:hover p {
+    color: #4E5B47;
+}
+
+
+/* =========================================================
+   ABORDAGENS
+   CREME
+   ========================================================= */
+
+.approaches {
+    background: var(--creme-novo);
+    color: var(--texto-novo);
+}
+
+.approaches h2,
+.approaches h3 {
+    color: var(--texto-novo);
+}
+
+.approaches .section-label {
+    color: #8A713A;
+}
+
+.approach-card {
+    background: var(--off-white-novo);
+    color: var(--texto-novo);
+    border-color: rgba(115, 126, 102, 0.20);
+}
+
+.approach-card h3 {
+    color: var(--verde-oliva);
+}
+
+.approach-card p {
+    color: var(--texto-suave-novo);
+}
+
+
+/* =========================================================
+   PROCESSO TERAPÊUTICO
+   VERDE OLIVA
+   ========================================================= */
+
+.statement {
+    background: var(--verde-oliva);
+    color: var(--branco-quente);
+}
+
+.statement .section-label,
+.statement > span,
+.statement-container > span {
+    color: #E4CB94;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+}
+
+.statement blockquote {
+    color: var(--branco-quente);
+}
+
+.statement-container::after {
+    background: var(--dourado-suave);
+}
+
+
+/* =========================================================
+   CONTATO
+   ========================================================= */
+
+.contact {
+    background: var(--off-white-novo);
+    color: var(--texto-novo);
+}
+
+.contact h2,
+.contact h3 {
+    color: var(--texto-novo);
+}
+
+.contact p {
+    color: var(--texto-suave-novo);
+}
+
+.contact .section-label {
+    color: #8A713A;
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+.btn-primary,
+.primary-button,
+.contact-button {
+    background: var(--verde-oliva);
+    color: var(--branco-quente);
+    border-color: var(--verde-oliva);
+}
+
+.btn-primary:hover,
+.primary-button:hover,
+.contact-button:hover {
+    background: #5F6C55;
+    color: var(--branco-quente);
+}
+
+.btn-secondary,
+.secondary-button {
+    background: transparent;
+    color: var(--verde-oliva);
+    border-color: var(--verde-oliva);
+}
+
+.btn-secondary:hover,
+.secondary-button:hover {
+    background: var(--verde-oliva);
+    color: var(--branco-quente);
+}
+
+
+/* =========================================================
+   DETALHES DOURADOS
+   ========================================================= */
+
+.gold-line,
+.divider,
+.decorative-line {
+    background: var(--dourado-suave);
+}
+
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+.footer {
+    background: #626E58;
+    color: var(--branco-quente);
+}
+
+.footer strong,
+.footer h3 {
+    color: var(--branco-quente);
+}
+
+.footer p,
+.footer a {
+    color: #F3EFE5;
+}
+
+.footer a:hover {
+    color: #E4CB94;
+}
+
+
+/* =========================================================
+   WHATSAPP
+   ========================================================= */
+
+.whatsapp-float {
+    box-shadow: 0 10px 30px rgba(56, 65, 54, 0.20);
+}
+
+
+/* =========================================================
+   SELEÇÃO DE TEXTO
+   ========================================================= */
+
+::selection {
+    background: var(--verde-salvia);
+    color: var(--texto-novo);
+}
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -1447,4 +1826,99 @@ a {
 .experience-badge span {
     font-size: 10px;
     line-height: 1.5;
+}/* =========================================================
+   CORREÇÃO DE CONTRASTE — QUEM É CHRISTIAN GOIS
+   ========================================================= */
+
+.about {
+    background: #AAB6A0 !important;
+    color: #384136 !important;
+}
+
+/* QUEM É CHRISTIAN GOIS */
+.about .section-label,
+.about-title .section-label,
+.about-info .section-label {
+    color: #6B5529 !important;
+    font-weight: 700 !important;
+}
+
+/* TÍTULO PRINCIPAL */
+.about h2,
+.about-title h2,
+.about-info h2 {
+    color: #303A2E !important;
+}
+
+/* "e prática clínica" */
+.about h2 em,
+.about-title h2 em,
+.about-info h2 em {
+    color: #657355 !important;
+}
+
+/* SUBTÍTULO PROFISSIONAL */
+.about h3,
+.about-info h3 {
+    color: #35402F !important;
+}
+
+/* TODOS OS PARÁGRAFOS */
+.about p,
+.about-info p {
+    color: #414B3D !important;
+}
+
+/* LINHA DOURADA */
+.about .gold-line {
+    background: #9A7B3E !important;
+}
+
+/* CG / ÁREA DA FOTO */
+.about-photo-placeholder span {
+    color: #F8F5EC !important;
+}
+
+.about-photo-placeholder p {
+    color: #596552 !important;
+}
+
+/* CARD DESDE 2018 */
+.experience-badge {
+    background: #F3EFE5 !important;
+    color: #303A2E !important;
+}
+
+.experience-badge strong {
+    color: #4B5947 !important;
+}
+
+/* 2018 / 360H / ATUAÇÃO */
+.about-credentials strong,
+.about-credentials div strong {
+    color: #6B5529 !important;
+    font-weight: 700 !important;
+}
+
+/* TEXTOS ABAIXO DOS NÚMEROS */
+.about-credentials span,
+.about-credentials div span,
+.about-credentials p {
+    color: #465241 !important;
+    font-weight: 500 !important;
+}
+
+/* DIVISÓRIAS */
+.about-credentials {
+    border-color: rgba(56, 65, 54, 0.30) !important;
+}/* CORREÇÃO DO TOPO DA SEÇÃO SOBRE */
+
+.about {
+    padding-top: 110px !important;
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding-top: 80px !important;
+    }
 }
